@@ -1,6 +1,6 @@
 package br.pucrs.poo;
 
-public class Pais {
+public class Pais implements Comparable<Pais> {
 
     private String cod;
     private String nome;
@@ -42,23 +42,28 @@ public class Pais {
     }
 
     // implementacao da interface Comparable<T>
-    // @Override
-    // public int compareTo(Pais outro) {
-    // if (this.area == outro.area) {
-    // return 0;
-    // } else if (this.area < outro.area) {
-    // return -1;
-    // } else {
-    // return 1;
-    // }
+    @Override
+    public int compareTo(Pais outro) {
+        // if (this.area == outro.area) {
+        // return 0;
+        // } else if (this.area < outro.area) {
+        // return -1;
+        // } else {
+        // return 1;
+        // }
 
-    // return this.getArea() - outro.getArea();
-    // return this.area - outro.area;
+        // como preciso retornar um negativo ou positivo qualquer
+        // não preciso fazer os if's
+        // return this.getArea() - outro.getArea();
 
-    // return (this.nome).compareTo(outro.nome);
+        // como estamos dentro da classe Pais, não precisamos dos
+        // getter's e podemos acessar diretamente os atributos
+        // return this.area - outro.area;
 
-    // return this.lingua.compareTo(outro.lingua);
-    // }
+        return (this.nome).compareTo(outro.nome);
+
+        // return this.lingua.compareTo(outro.lingua);
+    }
 
     // // classes internas anonomas para comparacao
 

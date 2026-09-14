@@ -7,7 +7,7 @@ import java.util.List;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void mainInicial(String[] args) {
 
         int vet[] = new int[] { 7, 4, 5, 2, 1, 9, 8, 6 };
 
@@ -38,7 +38,7 @@ public class App {
 
     }
 
-    public static void mainX(String[] args) {
+    public static void main(String[] args) {
         List<Pais> paises = new ArrayList<>();
         // = new LinkedList<>();
 
@@ -58,6 +58,7 @@ public class App {
         System.out.println("\n\nOrdenando...");
 
         // Collections.sort(paises);
+        Collections.sort(paises, new ComparadorAreaDecrescente());
 
         // for (Pais p : paises) System.out.println(p.toString());
         // System.out.println("\n\n...");
@@ -82,7 +83,8 @@ public class App {
         // usamos lambda expressions
         // Collections.sort(paises, (Pais a,Pais b)->a.getArea()-b.getArea());
         // Collections.sort(paises, (Pais a,Pais b)->b.getArea()-a.getArea());
-        // Collections.sort(paises, (pais1, pais2) -> pais1.getNome().compareTo(pais2.getNome()));
+        // Collections.sort(paises, (pais1, pais2) ->
+        // pais1.getNome().compareTo(pais2.getNome()));
 
         for (Pais p : paises)
             System.out.println(p.toString());
